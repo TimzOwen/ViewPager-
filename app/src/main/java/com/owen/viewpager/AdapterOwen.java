@@ -58,7 +58,8 @@ public class Adapter extends PagerAdapter {
         tvTitle.setText(models.get(position).getTitle());
         tvDesc.setText(models.get(position).getDesc());
 
-        container
+        //adds a view to the created child from the text of the inflater tev
+        container.addView(view);
 
         return super.instantiateItem(container, position);
     }
