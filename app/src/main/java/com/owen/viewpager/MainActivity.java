@@ -29,12 +29,35 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.scrollViewPager);
         viewPager.setAdapter(adapter);
         viewPager.setPadding(130,0,130,0);
+    
+       //set color picker in inter form
+        Integer[] colors_temp = {
+                getResources().getColor(R.color.color1),
+                getResources().getColor(R.color.color2),
+                getResources().getColor(R.color.color3),
+                getResources().getColor(R.color.color4)
+        };
+
         
         //set the onPager listener to the view adapter setter to the adapter
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener()
         {
             @Override
-            public void onPageScrolled(int i, float v, int i1) {
+            public void onPageScrolled(int position, floatpositionOffset , int  positionPixel 1) 
+            {
+                  //check if the adapter has no image then set default background
+                if (position < (adapter.getCount() -1 ) && position < (colors.length -1) )
+                {
+                    //TODO
+                    viewPager.setBackgroundColor((Integer)
+                            argbEvaluator.evaluate( positionOffset,
+                                    colors[position],
+                                    colors[position + 1] ));
+                }
+                else
+                {
+                    viewPager.setBackgroundColor(colors[colors.length -1]);
+                }
                 
             }
 
