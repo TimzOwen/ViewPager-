@@ -8,11 +8,14 @@ public class Model {
     private  String title;
     private String desc;
 
+    //creates a constructor for the threee parameters
     public Model(int image, String title, String desc) {
         this.image = image;
         this.title = title;
         this.desc = desc;
     }
+    
+    //create the getter and setter methods
 
     public int getImage() {
         return image;
