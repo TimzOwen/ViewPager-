@@ -67,8 +67,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageScrollStateChanged(int i) {
-
+            public void onPageScrollStateChanged(int i) 
+            {
+                //get the numbers of pagers
             }
         });
 
